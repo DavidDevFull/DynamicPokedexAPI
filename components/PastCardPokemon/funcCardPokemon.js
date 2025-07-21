@@ -1,49 +1,52 @@
-import { searchAndOpenPokemon } from "../PastUtilitiesObjectAndFunction/funcSearchPokemonInputAndCard.js";
+import { searchAndOpenPokemon } from '../PastUtilitiesObjectAndFunction/funcSearchPokemonInputAndCard.js';
 
 export const funcCardPokemon = (InsertTagIn, data) => {
-  const bodyCard = document.createElement("section");
-  bodyCard.className = "cardPokemon";
+  const bodyCard = document.createElement('section');
+  bodyCard.className = 'cardPokemon';
 
   const typeColorMap = {
-    fire: "var(--colorTypeFire)",
-    water: "var(--colorTypeWater)",
-    grass: "var(--colorTypeGram)",
-    flying: "var(--colorTypeFlying)",
-    fighting: "var(--colorTypeFighter)",
-    poison: "var(--colorTypePoison)",
-    electric: "var(--colorTypeElectric)",
-    ground: "var(--colorTypeEarth)",
-    psychic: "var(--colorTypePsychic)",
-    ice: "var(--colorTypeIce)",
-    bug: "var(--colorTypeInsect)",
-    ghost: "var(--colorTypeGhost)",
-    steel: "var(--colorTypeSteel)",
-    dragon: "var(--colorTypeDragon)",
-    dark: "var(--colorTypeDingy)",
-    fairy: "var(--colorTypeFairy)",
-    rock: "var(--colorTypeEarth)",
-    normal: "#A8A77A",
+    fire:       'var(--colorTypeFire)',
+    water:      'var(--colorTypeWater)',
+    grass:      'var(--colorTypeGram)',
+    flying:     'var(--colorTypeFlying)',
+    fighting:   'var(--colorTypeFighter)',
+    poison:     'var(--colorTypePoison)',
+    electric:   'var(--colorTypeElectric)',
+    ground:     'var(--colorTypeEarth)',
+    psychic:    'var(--colorTypePsychic)',
+    ice:        'var(--colorTypeIce)',
+    bug:        'var(--colorTypeInsect)',
+    ghost:      'var(--colorTypeGhost)',
+    steel:      'var(--colorTypeSteel)',
+    dragon:     'var(--colorTypeDragon)',
+    dark:       'var(--colorTypeDingy)',
+    fairy:      'var(--colorTypeFairy)',
+    rock:       'var(--colorTypeEarth)',
+    normal:     '#A8A77A',
   };
 
+
+  const basePath = new URL("../../image/iconsTypePokemon/", import.meta.url).pathname;
+
   const typeImgMap = {
-    dark: "../../image/iconsTypePokemon/iconDark.png",
-    dragon: "../../image/iconsTypePokemon/iconDragon.png",
-    electric: "../../image/iconsTypePokemon/iconElectric.png",
-    fairy: "../../image/iconsTypePokemon/iconFairy.png",
-    fighting: "../../image/iconsTypePokemon/iconFighting.png",
-    fire: "../../image/iconsTypePokemon/iconFire.png",
-    flying: "../../image/iconsTypePokemon/iconFlying.png",
-    ghost: "../../image/iconsTypePokemon/iconGhost.png",
-    grass: "../../image/iconsTypePokemon/iconGrass.png",
-    ground: "../../image/iconsTypePokemon/iconGround.png",
-    ice: "../../image/iconsTypePokemon/iconIce.png",
-    bug: "../../image/iconsTypePokemon/iconInsect.png",
-    normal: "../../image/iconsTypePokemon/iconNormal.png",
-    poison: "../../image/iconsTypePokemon/iconPoison.png",
-    psychic: "../../image/iconsTypePokemon/iconPsychic.png",
-    rock: "../../image/iconsTypePokemon/iconRock.png",
-    steel: "../../image/iconsTypePokemon/iconSteel.png",
-    water: "../../image/iconsTypePokemon/iconWater.png",
+    dark:     `${basePath}iconDark.png`,
+    dragon:   `${basePath}iconDragon.png`,
+    electric: `${basePath}iconElectric.png`,
+    fairy:    `${basePath}iconFairy.png`,
+    fighting: `${basePath}iconFighting.png`,
+    fire:     `${basePath}iconFire.png`,
+    flying:   `${basePath}iconFlying.png`,
+    ghost:    `${basePath}iconGhost.png`,
+    grass:    `${basePath}iconGrass.png`,
+    ground:   `${basePath}iconGround.png`,
+    ice:      `${basePath}iconIce.png`,
+    bug:      `${basePath}iconInsect.png`,
+    normal:   `${basePath}iconNormal.png`,
+    poison:   `${basePath}iconPoison.png`,
+    psychic:  `${basePath}iconPsychic.png`,
+    rock:     `${basePath}iconRock.png`,
+    steel:    `${basePath}iconSteel.png`,
+    water:    `${basePath}iconWater.png`,
   };
 
   const { name, id, img, types } = data;
