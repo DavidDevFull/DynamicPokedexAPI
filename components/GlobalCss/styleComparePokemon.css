@@ -1,0 +1,31 @@
+.styleSecComparePokemon {
+  border: solid 1px;
+  border-radius: 2.5rem;
+  margin: 0 auto;
+  width: clamp(275px, 60vw, 1600px);
+  text-align: center;
+  color: var(--white);
+  display: grid;
+  grid-template-columns: 4fr;
+  gap: 20px 0;
+  place-items: center center;
+  width: 100%;
+}
+.styleDivGraphicComparisonDynamics{
+  border: solid;
+}
+
+.styleBodyPresentationCard{
+  border: solid 1px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+}
+.styleBodyDifferenceOfData{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 10dvh;
+  border: solid;
+}

@@ -1,0 +1,15 @@
+#footerMenu{
+  width: clamp(250px, 100vw, 1650px);
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 2.5rem 2.5rem 0 0;
+  border: solid 1px var(--white);
+  height: 12dvh;
+  margin: 0 auto;
+  box-shadow: -0px -0px 10px 0px var(--white_Sum_Of_Course);
+  background: var(--black);
+
+}

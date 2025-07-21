@@ -1,0 +1,26 @@
+#secGlobalElements {
+  border-radius: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  width: clamp(250px, 100vw, 1650px);
+  margin: 0 auto;
+  padding: 1rem;
+  border-radius: 2.5rem;
+  background: var(--black);
+  margin: 110px auto;
+}
+
+#divDetailPokemon,
+#divComparePokemon,
+#divSuggestionRandomPokemon {
+  border-radius: 2.5rem;
+  margin: 2% 0;
+}
+#divSuggestionRandomPokemon {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  overflow: scroll;
+  border-radius: 2.5rem;
+}

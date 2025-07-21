@@ -1,0 +1,80 @@
+.cardPokemon {
+  width: 280px;
+  height: clamp(160px, 10vw, 170px);
+  border: solid var(--white) 1px;
+  background: var(--white);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 2.5rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.cardPokemon:hover {
+  transform: scale(1.1);
+  transition: 0.2s;
+  box-shadow: 0px 0px 10px 0px var(--white);
+}
+.imgNamePokemon,
+.infoTypeIconPokemon {
+  box-shadow: -0px -0px 10px 0px var(--white_Sum_Of_Course),
+    5px 5px 10px 0px var(--black);
+  border-radius: 1rem;
+  width: 40%;
+  height: 125px;
+  background: var(--white);
+  border: solid var(--white) 2px;
+}
+.imgNamePokemon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: url("../../image/backgroundDiv.jpg") no-repeat center;
+
+  background-size: cover;
+}
+.imgNamePokemon div {
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 1rem;
+  background: #00000077;
+  width: 85%;
+  border-radius: 2.5rem;
+  backdrop-filter: blur(1px);
+}
+.imgNamePokemon h2 {
+  font-size: 0.7rem;
+  background: rgba(0, 0, 0, 0.585);
+  border-radius: 2rem;
+  padding: 0 0.3rem;
+}
+.infoTypeIconPokemon img {
+  width: 60px;
+  image-rendering: pixelated;
+}
+
+.infoTypeIconPokemon {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  background: var(--white_Sum_Of_Course);
+}
+.infoTypeIconPokemon div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0 0.4rem;
+  width: 100%;
+}
+.infoTypeIconPokemon div img {
+  width: 50px;
+  image-rendering: pixelated;
+}
+.infoTypeIconPokemon span {
+  color: var(--black);
+  font-size: 0.8rem;
+  text-transform: capitalize;
+}
