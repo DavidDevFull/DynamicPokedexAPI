@@ -4,6 +4,7 @@
 @import url(styleIpnSearchPokemon.css);
 @import url(styleMenuScroll.css);
 @import url(styleSumAboutPokemon.css);
+@import url(styleSectionComparePokemon.css);
 * {
   padding: 0;
   margin: 0;
@@ -23,31 +24,58 @@
   --white: #f0eeee;
   --white_Sum_Of_Course: #d9d9d9;
 
-  --colorTypeFire: #ee8130;
-  --colorTypeWater: #6390f0;
-  --colorTypeGram: #7ac74c;
-  --colorTypeFlying: #a98ff3;
-  --colorTypeFighter: #c22e28;
-  --colorTypePoison: #a33ea1;
-  --colorTypeElectric: #f7d02c;
-  --colorTypeEarth: #e2bf65;
-  --colorTypePsychic: #d14994;
-  --colorTypeIce: #96d9d6;
-  --colorTypeInsect: #a6b91a;
-  --colorTypeGhost: #735797;
-  --colorTypeSteel: #b7b7ce;
-  --colorTypeDragon: #6f35fc;
-  --colorTypeDingy: #705746;
-  --colorTypeFairy: #d685ad;
+  --colorTypeNormal:     #a8a77a;
+  --colorTypeFire:       #ee8130;
+  --colorTypeWater:      #6390f0;
+  --colorTypeElectric:   #f7d02c;
+  --colorTypeGrass:      #7ac74c;
+  --colorTypeIce:        #96d9d6;
+  --colorTypeFighting:   #c22e28;
+  --colorTypePoison:     #a33ea1;
+  --colorTypeGround:     #e2bf65;
+  --colorTypeFlying:     #a98ff3;
+  --colorTypePsychic:    #d14994;
+  --colorTypeBug:        #a6b91a;
+  --colorTypeRock:       #b6a136;
+  --colorTypeGhost:      #735797;
+  --colorTypeDragon:     #6f35fc;
+  --colorTypeDark:       #705746;
+  --colorTypeSteel:      #b7b7ce;
+  --colorTypeFairy:      #d685ad;
+
+  /* Light Versions (25% lighter approx.) */
+  --colorTypeNormalLight:   #c6c49b;
+  --colorTypeFireLight:     #f5a061;
+  --colorTypeWaterLight:    #8ab0f3;
+  --colorTypeElectricLight: #fbe56d;
+  --colorTypeGrassLight:    #9bd578;
+  --colorTypeIceLight:      #bde9e7;
+  --colorTypeFightingLight: #d65a4f;
+  --colorTypePoisonLight:   #c166c3;
+  --colorTypeGroundLight:   #edd48b;
+  --colorTypeFlyingLight:   #c1b1f6;
+  --colorTypePsychicLight:  #e176b1;
+  --colorTypeBugLight:      #c6d63a;
+  --colorTypeRockLight:     #d0be6c;
+  --colorTypeGhostLight:    #9b7db4;
+  --colorTypeDragonLight:   #9267fc;
+  --colorTypeDarkLight:     #a07e67;
+  --colorTypeSteelLight:    #d2d2e0;
+  --colorTypeFairyLight:    #e8acc8;
 }
 html,
 body {
   height: 100dvh;
   width: 100%;
+  image-rendering: pixelated;
+
 }
 body {
   background: var(--white);
   font-family: "Pixelify Sans", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 #asideInformationWebsite {
   background: var(--black_Sum_Of_Course);
@@ -64,24 +92,24 @@ body {
   right: 0;
   z-index: 3;
   overflow: hidden;
+  padding-top: 2rem;
 }
 #headerSearch,
 #sectionContain,
-#footerMen {
+#footerMenu {
   width: clamp(250px, 100vw, 1650px);
   background: var(--black);
+  box-shadow: -0px -0px 10px 0px var(--white_Sum_Of_Course);
   border: none;
 }
 #headerSearch {
   border-radius: 0 0 2.5rem 2.5rem;
-  border: solid 1px var(--white);
   margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100px;
-  box-shadow: -0px -0px 10px 0px var(--white_Sum_Of_Course);
-  transition: ease-in-out 0.5s;
+  transition: .3s;
 
   position: fixed;
   top: 0;
@@ -106,7 +134,39 @@ body {
   border-radius: 2.5rem;
   
 }
+/*
 #footerMenu {
-  bottom: 0px;
-  height: 50px;
+  border-radius: 2.5rem 2.5rem 0 0;
+  height: 100px;
+  display: none;
+}*/
+
+
+@keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+.styleSecSumAboutPokemon {
+  --firstColorShadow: #000;
+  --secondColorShadow: #000; 
+}
+
+@keyframes boxsShadowAnimation {
+  0%,
+  100% {
+    box-shadow: 0 0 20px var(--firstColorShadow); 
+    border: solid var(--firstColorShadow) ;
+  }
+  50% {
+    box-shadow: 0 0 20px var(--secondColorShadow); 
+    border: solid var(--secondColorShadow);
+  }
 }

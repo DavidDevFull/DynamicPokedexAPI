@@ -1,0 +1,12 @@
+.sectionComparePokemon{
+      border: solid 2px var(--white);
+      margin: 5% auto;
+      width: 90%;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: var(--white);
+      border-radius: 1rem;
+      font-size: clamp(.9rem, 2vw, 2rem);
+}

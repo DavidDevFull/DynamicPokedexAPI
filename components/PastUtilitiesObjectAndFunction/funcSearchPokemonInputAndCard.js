@@ -34,8 +34,11 @@ export const openPokemonDetailPage = (pokemonData) => {
     weight: pokemonData.weight,
   }).toString();
 
-  const basePath = "./PastPageInformationDetailed/pageInformationDetailed.html";
-  window.open(`${basePath}?${query}`, "_blank");
+  const basePath = "/PastPageInformationDetailed/pageInformationDetailed.html";
+
+  window.open(
+    `${basePath}?${query}`, "_blank"
+  );
 };
 
 export const searchAndOpenPokemon = async (value) => {

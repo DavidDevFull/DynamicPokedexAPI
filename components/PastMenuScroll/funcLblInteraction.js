@@ -1,6 +1,5 @@
 const basePath = new URL("../../image/iconMenu/", import.meta.url).pathname;
 
-
 export const funcElemental = () => {
   const btnElemental = document.createElement("button");
   btnElemental.id = "btnMenu";

@@ -3,6 +3,7 @@ import {
   openPokemonDetailPage,
 } from "./components/PastUtilitiesObjectAndFunction/funcSearchPokemonInputAndCard.js";
 import { funcLoadingScrollPokemon } from "./components/PastUtilitiesObjectAndFunction/funcLoadingScrollPokemon.js";
+import { utiliFuncCollisionComponentesTopBottom } from "./components/PastUtilitiesObjectAndFunction/funcUtilitiesColisionComponents.js";
 
 import { funcIpnSearchPokemon } from "./components/PastIpnSearchPokemon/funcIpnSearchPokemon.js";
 import { funcMenuScroll } from "./components/PastMenuScroll/funcMenuScroll.js";
@@ -32,34 +33,33 @@ let lastScrollTop = 0; // Armazena a posição anterior do scroll
 
 window.addEventListener("scroll", async () => {
   const currentScroll = window.scrollY;
-
   // Lógica para carregamento com scroll infinito
   if (
     window.innerHeight + currentScroll >= document.body.scrollHeight &&
     !isLoading
   ) {
     isLoading = true;
-    await funcLoadingScrollPokemon(divContainScrollInfinit, offset, limit);
+    await funcLoadingScrollPokemon(document.getElementById("divContainScrollInfinit"), offset, limit);
     offset += limit;
     isLoading = false;
   }
-  // Esconder e mostrando aba de pesquisa
-  if (currentScroll == 0) {
+
+  utiliFuncCollisionComponentesTopBottom(
+    document.getElementById("headerSearch"),
+    document.querySelector(".bodyMenuScroll")
+  );
+
+  if (currentScroll <= lastScrollTop) {
+    console.log("Scrool rolado para cima");
     document.getElementById("headerSearch").style.top = "0px";
-    document.querySelector(".bodyMenuScroll").style.paddingTop = "0.6rem";
-  }else{
-        // Detecta se o usuário está rolando para cima ou para baixo
-    if (currentScroll < lastScrollTop) {
-      console.info("🆙 Scroll para CIMA - Mostrar Header");
-      // Aqui você pode ativar o header, por exemplo:
-      document.getElementById("headerSearch").style.top = "0px";
-      document.querySelector(".bodyMenuScroll").style.paddingTop = "120px";
-    } else {
-      console.info("🔽 Scroll para BAIXO - Esconder Header");
-      // Aqui você pode ocultar o header:
-      document.getElementById("headerSearch").style.top = "-200px"; // ou use uma classe CSS
-      document.querySelector(".bodyMenuScroll").style.paddingTop = "0.6rem";
-    }
+  } else {
+    console.log("Scroll rolado para baixo");
+    const observeHeader =
+      document.getElementById("headerSearch").getBoundingClientRect().bottom +
+      window.scrollY;
+    observeHeader >= 325
+      ? (document.getElementById("headerSearch").style.top = "-115px")
+      : console.info("Está no topo e não vai ser escondido");
   }
 
   // Atualiza o valor do scroll anterior

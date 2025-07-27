@@ -2,11 +2,13 @@ import {
   fetchPokemonData,
   openPokemonDetailPage,
 } from "../components/PastUtilitiesObjectAndFunction/funcSearchPokemonInputAndCard.js";
+import { utiliFuncCollisionComponentesTopBottom } from "../components/PastUtilitiesObjectAndFunction/funcUtilitiesColisionComponents.js";
 
 import { funcIpnSearchPokemon } from "../components/PastIpnSearchPokemon/funcIpnSearchPokemon.js";
 import { funcCardPokemon } from "../components/PastCardPokemon/funcCardPokemon.js";
 import { funcMenuScroll } from "../components/PastMenuScroll/funcMenuScroll.js";
 import { funcSumAboutPokemon } from "../components/PastSumAboutPokemon/funcSumAboutPokemon.js";
+import { funcSectionComparePokemon } from "../components/PastSumAboutPokemon/funcSectionComparePokemon.js";
 
 funcIpnSearchPokemon(document.getElementById("headerSearch"), async (value) => {
   const data = await fetchPokemonData(value);
@@ -15,44 +17,46 @@ funcIpnSearchPokemon(document.getElementById("headerSearch"), async (value) => {
 });
 funcMenuScroll(document.getElementById("secGlobalElements"));
 funcSumAboutPokemon(document.getElementById("divDetailPokemon"));
+funcSectionComparePokemon(document.getElementById("divComparePokemon"));
 
 //Sujestão aleatória
 const limit = 1;
 const maxOffset = 649 - limit;
 
-const generatorNumberRamdom = async () => {
-  let numberRandom = Math.floor(Math.random() * maxOffset);
-  const data = await fetchPokemonData(numberRandom);
-  console.log(numberRandom, data);
+for (let cont = 0; cont < 1; cont++) {
+  (async () => {
+    let numberRandom = Math.floor(Math.random() * maxOffset);
+    const data = await fetchPokemonData(numberRandom);
+    console.log(numberRandom, data);
 
-  funcCardPokemon(document.getElementById("divSuggestionRandomPokemon"), data);
-};
-for (let cont = 0; cont < 25; cont++) {
-  generatorNumberRamdom();
+    funcCardPokemon(
+      document.getElementById("divSuggestionRandomPokemon"),
+      data
+    );
+  })();
 }
+
 // Esconder e mostrando aba de pesquisa
 let lastScrollTop = 0;
 window.addEventListener("scroll", () => {
   const currentScroll = window.scrollY;
 
-  // Esconder e mostrando aba de pesquisa
-  if (currentScroll == 0) {
-    document.querySelector("header").style.top = "0px";
-    document.querySelector(".bodyMenuScroll").style.paddingTop = "0.6rem";
+  utiliFuncCollisionComponentesTopBottom(
+    document.getElementById("headerSearch"),
+    document.querySelector(".bodyMenuScroll")
+  );
+
+  if (currentScroll <= lastScrollTop) {
+    document.getElementById("headerSearch").style.top = "0px";
   } else {
-    // Detecta se o usuário está rolando para cima ou para baixo
-    if (currentScroll < lastScrollTop) {
-      console.info("🆙 Scroll para CIMA - Mostrar Header");
-      // Aqui você pode ativar o header, por exemplo:
-      document.querySelector("header").style.top = "0px";
-      document.querySelector(".bodyMenuScroll").style.paddingTop = "110px";
-    } else {
-      console.info("🔽 Scroll para BAIXO - Esconder Header");
-      // Aqui você pode ocultar o header:
-      document.querySelector("header").style.top = "-200px"; // ou use uma classe CSS
-      document.querySelector(".bodyMenuScroll").style.paddingTop = "0.6rem";
-    }
+    const observeHeader =
+      document.getElementById("headerSearch").getBoundingClientRect().bottom +
+      window.scrollY;
+    observeHeader >= 200
+      ? (document.getElementById("headerSearch").style.top = "-100px")
+      : console.info("Está no topo e não vi ser escondido");
   }
+
   // Atualiza o valor do scroll anterior
   lastScrollTop = currentScroll;
 });

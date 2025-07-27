@@ -5,9 +5,8 @@
   flex-direction: column;
   gap: 1.5rem;
   position: sticky;
-  padding-top: 0.6rem;
-  top: 0;
-  transition: .5s;
+  top: 1rem;
+  transition: .1s;
 }
 .bodyMenuScroll button{
   border-radius: 1.7rem;

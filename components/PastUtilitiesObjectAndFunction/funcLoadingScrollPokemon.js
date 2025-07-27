@@ -41,3 +41,29 @@ export const funcLoadingScrollPokemon = async (refInsertCard, offset, limit) => 
     console.error('Erro ao buscar Pokémon:', error);
   }
 };
+
+export const fetchPokemonDescription = async (pokemonIdStr) => {
+    try {
+      const res = await fetch(
+        `https://pokeapi.co/api/v2/pokemon-species/${pokemonIdStr}/`
+      );
+      if (!res.ok) {
+        console.log(`Requisição ${res.status}`);
+        return null;
+      }
+
+      const data = await res.json();
+      let descriptionEntry =
+        data.flavor_text_entries.find(
+          (entry) => entry.language.name === "pt"
+        ) ||
+        data.flavor_text_entries.find((entry) => entry.language.name === "en");
+
+      return descriptionEntry
+        ? descriptionEntry.flavor_text
+        : "Descrição não disponível.";
+    } catch (error) {
+      console.error("Erro ao buscar descrição:", error);
+      return null;
+    }
+  };
