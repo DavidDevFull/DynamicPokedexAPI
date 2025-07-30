@@ -11,7 +11,7 @@
 }
 .bodyMenuScroll button{
   border-radius: 2rem;
-  width: clamp(50px, 2vw, 70px);
+  width: clamp(50px, 2vw, 60px);
   height: clamp(50px, 2vw, 70px);
 
   background: var(--black_Sum_Of_Course);
@@ -25,7 +25,7 @@
   scale: 1.1;
 }
 .bodyMenuScroll button img {
-  width: clamp(30px, 2vw, 70px);
+  width: 65%;
 }
 
 

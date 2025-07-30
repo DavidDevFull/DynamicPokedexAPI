@@ -115,10 +115,10 @@ export const mappingIconTypes = (typesIcon) => {
       // Pega o objeto retornado e filtra com uma função utilitaria do tipo[] de pokemon.
       const { filteredRequest } = funcUtilitiesStyleMapping(typesIcon);
       // Caso exista 2 tipos return 2 tipos se não return apenas 1.
-      const icon = filteredRequest[index] ? filteredRequest[index][2] : ""; // Pega o caminho do ícone
+      const icon = filteredRequest[index] ? filteredRequest[index][2] : ""; // Pega o caminho do ícone.
       return icon
         ? `<img src="${icon}" alt="Tipo ${type}" class="pokemon-type-icon">`
-        : ""; 
+        : "";
     })
     .join("");
 };
@@ -128,9 +128,9 @@ export const mappingLinearNameTypesColor = (typesLinearColorName) => {
   // Pega o objeto retornado e filtra com uma função utilitaria do tipo[] de pokemon.
   const { filteredRequest } = funcUtilitiesStyleMapping(typesLinearColorName);
   //Retorna tanto a cor nomal quanto uma cor mais clara.
-   //Se existir 2 tipos, return 4 cores(normal e mais clara), pelo contrario apenas 2(um tipo).
-  const firstColor = filteredRequest[0] ? filteredRequest[0][0] : ""; 
-  const secondColor = filteredRequest[1] ? filteredRequest[1][1] : firstColor; 
+  //Se existir 2 tipos, return 4 cores(normal e mais clara), pelo contrario apenas 2(um tipo).
+  const firstColor = filteredRequest[0] ? filteredRequest[0][0] : "";
+  const secondColor = filteredRequest[1] ? filteredRequest[1][1] : firstColor;
   // Retorna um style que é aplicado direto no HTML
   return `
     background: linear-gradient(to right, ${firstColor} 0%, ${secondColor} 100%);
@@ -141,14 +141,17 @@ export const mappingLinearNameTypesColor = (typesLinearColorName) => {
 // Mapeamento que retorna para cado nome do tipo uma unica cor não linear.
 export const mappingStrTypesColor = (typesString) => {
   // Solicita um parametro(Array de tipos, é tratado direto no component[]).
-  return typesString.map((type, index) => {
+  return typesString
+    .map((type, index) => {
       // Pega o objeto retornado e filtra com uma função utilitaria do tipo[] de pokemon.
       const { filteredRequest } = funcUtilitiesStyleMapping(typesString);
       // Color aguarda a cor filtrada.
-      const color = filteredRequest[index] ? filteredRequest[index][0] : 'var(--black)';
+      const color = filteredRequest[index]
+        ? filteredRequest[index][0]
+        : "var(--black)";
       // Estilo aplicado diretamente no HTML retornando também o nome do tipo.
       return `<span style="color: ${color};">${type}</span>`;
-    })// Tydo separado com uma barra com o método join.
+    }) // Tydo separado com uma barra com o método join.
     .join(" / ");
 };
 // Mapeamento do fundo com cores lineares
@@ -157,10 +160,14 @@ export const mappingBackgroundLinearTypesColor = (typesString) => {
   const { filteredRequest } = funcUtilitiesStyleMapping(typesString);
 
   // Separa cada cor(usado as cores mais clara), mas de acordo com o array.
-  const firstColor = filteredRequest[0] ? filteredRequest[0][1] : 'var(--black)';
-  const secondColor = filteredRequest[1] ? filteredRequest[1][1] : 'var(--black)';
+  const firstColor = filteredRequest[0]
+    ? filteredRequest[0][1]
+    : "var(--black)";
+  const secondColor = filteredRequest[1]
+    ? filteredRequest[1][1]
+    : "transparent";
 
-  // Retorna um estilo que é aplicado siretamente no HTML
+  // Retorna um estilo que é aplicado siretamente no HTML.
   return `
     background: ${firstColor};
     background: linear-gradient(to top, ${firstColor} 0%, ${secondColor} 150%);
@@ -171,8 +178,12 @@ export const mappingBoxShadowAnimationTypesColor = (typesString) => {
   // Pega o objeto retornado e filtra com uma função utilitaria do tipo[] de pokemon.
   const { filteredRequest } = funcUtilitiesStyleMapping(typesString);
   // Separa cada cor(usado as cores mais escuras), mas de acordo com o array.
-  const firstColorLight = filteredRequest[0] ? filteredRequest[0][0] : "var(--colorDefaultLight)";
-  const secondColorLight = filteredRequest[1] ? filteredRequest[1][0] : filteredRequest[0][1] ;
+  const firstColorLight = filteredRequest[0]
+    ? filteredRequest[0][0]
+    : "var(--colorDefaultLight)";
+  const secondColorLight = filteredRequest[1]
+    ? filteredRequest[1][0]
+    : filteredRequest[0][1];
   // Retorna um estilo que é aplicado diretamente no HTML.
   return `
     animation: boxsShadowAnimation 3s linear infinite;

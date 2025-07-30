@@ -1,4 +1,4 @@
-const basePath = new URL("../../image/iconMenu/", import.meta.url).pathname;
+const basePath = "../../image/iconMenu/"
 
 export const funcThemeChange = () => {
   const btnThemeChange = document.createElement("button");
@@ -81,10 +81,4 @@ export const funcReturnPageMain = () => {
 
   return btnReturnPageMain;
 };
-/*
-const btnReturnPageMain = document.querySelector("#btnReturnPageMain");
-  btnReturnPageMain.addEventListener("click", () => {
-    window.open("/DynamicPokedexAPI", "_parent");
-  });
-
-*/
+ 
