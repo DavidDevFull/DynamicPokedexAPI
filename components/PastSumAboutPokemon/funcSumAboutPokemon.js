@@ -8,10 +8,7 @@ import {
 } from "../PastUtilitiesObjectAndFunction/funcUtilitiesStyleMapping.js";
 
 export const funcSumAboutPokemon = async (inserirInTag) => {
-  const basePath = "../../image/iconsStates/";
-
-  // Restante do seu código...
-
+  const basePath = new URL("../../image/iconsStates/", import.meta.url).pathname;
   const params = new URLSearchParams(window.location.search);
 
   const pokemon = {
@@ -48,7 +45,7 @@ export const funcSumAboutPokemon = async (inserirInTag) => {
           return `
         <div class="pokemonStatItem">
           <img width="32px" src="${iconSrc}" alt="${iconName}">
-          <span class="stat-value">${value}</span>
+          <span>${value}</span>
         </div>
       `;
         }
