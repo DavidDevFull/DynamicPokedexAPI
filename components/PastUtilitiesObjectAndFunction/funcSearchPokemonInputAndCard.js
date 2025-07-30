@@ -34,10 +34,8 @@ export const openPokemonDetailPage = (pokemonData) => {
     weight: pokemonData.weight,
   }).toString();
 
-  const basePath = new URL("../PastPageInformationDetailed/pageInformationDetailed.html", import.meta.url).pathname;
-
   window.open(
-    `${basePath}?${query}`, "_parent"
+    `/DynamicPokedexAPI/PastPageInformationDetailed/pageInformationDetailed.html?${query}`, "_parent"
   );
 };
 

@@ -76,8 +76,15 @@ export const funcReturnPageMain = () => {
   btnReturnPageMain.id = "btnReturnPageMain";
   btnReturnPageMain.innerHTML = `<img src="${basePath}icon_Arrow.png" alt="Arrow">`;
   btnReturnPageMain.addEventListener("click", () => {
-    window.open("/index.html", "_parent");
+    window.open("/DynamicPokedexAPI", "_parent");
   });
 
   return btnReturnPageMain;
 };
+/*
+const btnReturnPageMain = document.querySelector("#btnReturnPageMain");
+  btnReturnPageMain.addEventListener("click", () => {
+    window.open("/DynamicPokedexAPI", "_parent");
+  });
+
+*/
