@@ -76,7 +76,7 @@ export const funcReturnPageMain = () => {
   btnReturnPageMain.id = "btnReturnPageMain";
   btnReturnPageMain.innerHTML = `<img src="${basePath}icon_Arrow.png" alt="Arrow">`;
   btnReturnPageMain.addEventListener("click", () => {
-    window.open("/DynamicPokedexAPI.html", "_parent");
+    window.open("/index.html", "_parent");
   });
 
   return btnReturnPageMain;
