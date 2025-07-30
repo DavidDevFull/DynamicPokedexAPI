@@ -8,7 +8,10 @@ import {
 } from "../PastUtilitiesObjectAndFunction/funcUtilitiesStyleMapping.js";
 
 export const funcSumAboutPokemon = async (inserirInTag) => {
-  const basePath = new URL("../../image/iconsStates/", import.meta.url);
+  const basePath = "../../image/iconsStates/";
+
+  // Restante do seu código...
+
   const params = new URLSearchParams(window.location.search);
 
   const pokemon = {

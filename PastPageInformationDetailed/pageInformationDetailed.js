@@ -2,7 +2,6 @@ import {
   fetchPokemonData,
   openPokemonDetailPage,
 } from "../components/PastUtilitiesObjectAndFunction/funcSearchPokemonInputAndCard.js";
-import { utiliFuncCollisionComponentesTopBottom } from "../components/PastUtilitiesObjectAndFunction/funcUtilitiesColisionComponents.js";
 
 import { funcIpnSearchPokemon } from "../components/PastIpnSearchPokemon/funcIpnSearchPokemon.js";
 import { funcCardPokemon } from "../components/PastCardPokemon/funcCardPokemon.js";
@@ -41,10 +40,6 @@ let lastScrollTop = 0;
 window.addEventListener("scroll", () => {
   const currentScroll = window.scrollY;
 
-  utiliFuncCollisionComponentesTopBottom(
-    document.getElementById("headerSearch"),
-    document.querySelector(".bodyMenuScroll")
-  );
 
   if (currentScroll <= lastScrollTop) {
     document.getElementById("headerSearch").style.top = "0px";

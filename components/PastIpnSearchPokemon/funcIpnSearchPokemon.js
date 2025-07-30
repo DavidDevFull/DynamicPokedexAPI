@@ -13,6 +13,7 @@ export const funcIpnSearchPokemon = (
   ipnSearchPokemon.type = "text";
 
   async function handleSearch() {
+    // Pega o valor da caixa de texto e caso não tenha retorna vazio.
     const value = ipnSearchPokemon.value.trim();
     if (!value) return;
 
@@ -20,14 +21,14 @@ export const funcIpnSearchPokemon = (
       await callback(value);
     }
   }
-
+  // Precionando enter texto irá pesquisar.
   ipnSearchPokemon.addEventListener("keypress", async (event) => {
     if (event.key === "Enter") {
       await handleSearch();
       ipnSearchPokemon.value = "";
     }
   });
-
+  // Tirando o cursor da caixa de texto irá pesquisar.
   ipnSearchPokemon.addEventListener("blur", async () => {
     await handleSearch();
     ipnSearchPokemon.value = "";

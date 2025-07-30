@@ -3,34 +3,29 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.7rem;
   position: sticky;
   top: 1rem;
   transition: .1s;
+  padding: 1rem 0;
 }
 .bodyMenuScroll button{
-  border-radius: 1.7rem;
-  width: 55px;
-  height: 55px;
-  background: var(--white);
-  border: solid var(--black_Sum_Of_Course);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  transition: all 0.2s;
-  overflow: hidden;
-}
+  border-radius: 2rem;
+  width: clamp(50px, 2vw, 70px);
+  height: clamp(50px, 2vw, 70px);
 
+  background: var(--black_Sum_Of_Course);
+  border: solid var(--white) 2px;
+
+  cursor: pointer;
+  transition: 0.2s;
+}
 .bodyMenuScroll button:hover {
-  transition: all 0.2s;
-  left: 0;
-  box-shadow: -0px -0px 15px 0px var(--white_Sum_Of_Course);
+  box-shadow: -0px 5px 5px 0px var(--black_Sum_Of_Course);
   scale: 1.1;
 }
-
 .bodyMenuScroll button img {
-  width: 35px;
+  width: clamp(30px, 2vw, 70px);
 }
 
 

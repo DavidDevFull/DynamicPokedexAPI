@@ -3,12 +3,10 @@ import {
   openPokemonDetailPage,
 } from "./components/PastUtilitiesObjectAndFunction/funcSearchPokemonInputAndCard.js";
 import { funcLoadingScrollPokemon } from "./components/PastUtilitiesObjectAndFunction/funcLoadingScrollPokemon.js";
-import { utiliFuncCollisionComponentesTopBottom } from "./components/PastUtilitiesObjectAndFunction/funcUtilitiesColisionComponents.js";
-
 import { funcIpnSearchPokemon } from "./components/PastIpnSearchPokemon/funcIpnSearchPokemon.js";
 import { funcMenuScroll } from "./components/PastMenuScroll/funcMenuScroll.js";
 
-const limit = 25;
+const limit = 10;
 let offset = 0;
 let isLoading = false;
 
@@ -20,7 +18,6 @@ funcIpnSearchPokemon(document.getElementById("headerSearch"), async (value) => {
 
 funcMenuScroll(document.getElementById("sectionContain"));
 
-// Inicial-
 await funcLoadingScrollPokemon(
   document.getElementById("divContainScrollInfinit"),
   offset,
@@ -39,15 +36,14 @@ window.addEventListener("scroll", async () => {
     !isLoading
   ) {
     isLoading = true;
-    await funcLoadingScrollPokemon(document.getElementById("divContainScrollInfinit"), offset, limit);
+    await funcLoadingScrollPokemon(
+      document.getElementById("divContainScrollInfinit"),
+      offset,
+      limit
+    );
     offset += limit;
     isLoading = false;
   }
-
-  utiliFuncCollisionComponentesTopBottom(
-    document.getElementById("headerSearch"),
-    document.querySelector(".bodyMenuScroll")
-  );
 
   if (currentScroll <= lastScrollTop) {
     console.log("Scrool rolado para cima");
@@ -60,6 +56,8 @@ window.addEventListener("scroll", async () => {
     observeHeader >= 325
       ? (document.getElementById("headerSearch").style.top = "-115px")
       : console.info("Está no topo e não vai ser escondido");
+    if (observeHeader >= 325) {
+    }
   }
 
   // Atualiza o valor do scroll anterior

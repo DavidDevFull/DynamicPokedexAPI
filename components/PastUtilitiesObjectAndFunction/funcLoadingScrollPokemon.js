@@ -12,7 +12,7 @@ export const funcLoadingScrollPokemon = async (refInsertCard, offset, limit) => 
     const filterActive = funcUtilitiesGetApis(offset, limit);
 
 
-    const res = await fetch(filterActive.requestPokemonAllTypes);
+    const res = await fetch(filterActive.requestPokemonAll);
     const data = await res.json();
     const results = data.results;
     console.log(data);

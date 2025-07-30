@@ -1,38 +1,31 @@
 .ipnSearchPokemon {
-  background-image: url("../../image/iconMenu/magnifying_Theme_Glass_Dark.png");
-  background-repeat: no-repeat;
   padding-left: 2.7rem;
   width: 90%;
   height: 50px;
-  border: solid transparent 2px;
   border-radius: 1.7rem;
+  border: 2px;
   outline: none;
   font-size: clamp(0.9rem, 1vw, 1.2rem);
   transition: .5s;
+  background: var(--white_Sum_Of_Course) url('../../image/iconMenu/icon_Magnifying_Theme_Dark.png') left no-repeat;
 }
 .ipnSearchPokemon::placeholder {
-  color: var(--black);
+  color: var(--black_Sum_Of_Course);
 }
 .ipnSearchPokemon:focus{
-    animation: animationColor linear infinite 3s;
-
+    animation: animationColor linear infinite 2.5s;
 }
 @keyframes animationColor {
-  0%,
-  100% {
-    border: solid 2px var(--colorTypeFire);
+  0%, 100%{
     box-shadow: -0px -0px 15px 0px var(--colorTypeFire);
   }
   25% {
-    border: solid 2px var(--colorTypeWater);
     box-shadow: -0px -0px 15px 0px var(--colorTypeWater);
   }
   50% {
-    border: solid 2px var(--colorTypeGram);
     box-shadow: -0px -0px 15px 0px var(--colorTypeGram);
   }
   75% {
-    border: solid 2px var(--colorTypePoison);
     box-shadow: -0px -0px 15px 0px var(--colorTypePoison);
   }
 }

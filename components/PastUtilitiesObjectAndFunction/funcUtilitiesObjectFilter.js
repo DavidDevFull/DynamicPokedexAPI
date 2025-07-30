@@ -23,6 +23,8 @@ export const funcUtilitiesObjectFilter = (data) => ({
 });
 
 
-export const funcUtilitiesGetApis = (offset,limit) => ({
-   requestPokemonAllTypes : `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`,
-})
+export const funcUtilitiesGetApis = (offset, limit) => ({
+    // Endpoint para buscar uma lista paginada de todos os Pokémon
+    requestPokemonAll: `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`,
+});
+

@@ -18,57 +18,57 @@
   background-color: transparent;
 }
 :root {
-  --black: #0c0c0c;
+  --black: #111010;
   --black_Sum_Of_Course: #2d2d2d;
+  --black_Background: #1c1c1c;
 
-  --white: #f0eeee;
-  --white_Sum_Of_Course: #d9d9d9;
+  --white: #e2e2e2;
+  --white_Sum_Of_Course: #f2f2f2;
+  --white_Background: #c7c7c7;
 
-  --colorTypeNormal:     #a8a77a;
-  --colorTypeFire:       #ee8130;
-  --colorTypeWater:      #6390f0;
-  --colorTypeElectric:   #f7d02c;
-  --colorTypeGrass:      #7ac74c;
-  --colorTypeIce:        #96d9d6;
-  --colorTypeFighting:   #c22e28;
-  --colorTypePoison:     #a33ea1;
-  --colorTypeGround:     #e2bf65;
-  --colorTypeFlying:     #a98ff3;
-  --colorTypePsychic:    #d14994;
-  --colorTypeBug:        #a6b91a;
-  --colorTypeRock:       #b6a136;
-  --colorTypeGhost:      #735797;
-  --colorTypeDragon:     #6f35fc;
-  --colorTypeDark:       #705746;
-  --colorTypeSteel:      #b7b7ce;
-  --colorTypeFairy:      #d685ad;
+  --colorTypeNormal: #a8a77a;
+  --colorTypeFire: #ee8130;
+  --colorTypeWater: #6390f0;
+  --colorTypeElectric: #f7d02c;
+  --colorTypeGrass: #7ac74c;
+  --colorTypeIce: #96d9d6;
+  --colorTypeFighting: #c22e28;
+  --colorTypePoison: #a33ea1;
+  --colorTypeGround: #e2bf65;
+  --colorTypeFlying: #a98ff3;
+  --colorTypePsychic: #d14994;
+  --colorTypeBug: #a6b91a;
+  --colorTypeRock: #b6a136;
+  --colorTypeGhost: #735797;
+  --colorTypeDragon: #6f35fc;
+  --colorTypeDark: #705746;
+  --colorTypeSteel: #b7b7ce;
+  --colorTypeFairy: #d685ad;
 
   /* Light Versions (25% lighter approx.) */
-  --colorTypeNormalLight:   #c6c49b;
-  --colorTypeFireLight:     #f5a061;
-  --colorTypeWaterLight:    #8ab0f3;
+  --colorTypeNormalLight: #c6c49b;
+  --colorTypeFireLight: #f5a061;
+  --colorTypeWaterLight: #8ab0f3;
   --colorTypeElectricLight: #fbe56d;
-  --colorTypeGrassLight:    #9bd578;
-  --colorTypeIceLight:      #bde9e7;
+  --colorTypeGrassLight: #9bd578;
+  --colorTypeIceLight: #bde9e7;
   --colorTypeFightingLight: #d65a4f;
-  --colorTypePoisonLight:   #c166c3;
-  --colorTypeGroundLight:   #edd48b;
-  --colorTypeFlyingLight:   #c1b1f6;
-  --colorTypePsychicLight:  #e176b1;
-  --colorTypeBugLight:      #c6d63a;
-  --colorTypeRockLight:     #d0be6c;
-  --colorTypeGhostLight:    #9b7db4;
-  --colorTypeDragonLight:   #9267fc;
-  --colorTypeDarkLight:     #a07e67;
-  --colorTypeSteelLight:    #d2d2e0;
-  --colorTypeFairyLight:    #e8acc8;
+  --colorTypePoisonLight: #c166c3;
+  --colorTypeGroundLight: #edd48b;
+  --colorTypeFlyingLight: #c1b1f6;
+  --colorTypePsychicLight: #e176b1;
+  --colorTypeBugLight: #c6d63a;
+  --colorTypeRockLight: #d0be6c;
+  --colorTypeGhostLight: #9b7db4;
+  --colorTypeDragonLight: #9267fc;
+  --colorTypeDarkLight: #a07e67;
+  --colorTypeSteelLight: #d2d2e0;
+  --colorTypeFairyLight: #e8acc8;
 }
 html,
 body {
   height: 100dvh;
   width: 100%;
-  image-rendering: pixelated;
-
 }
 body {
   background: var(--white);
@@ -76,14 +76,15 @@ body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  transition: 0.3s linear;
 }
 #asideInformationWebsite {
-  background: var(--black_Sum_Of_Course);
-  border-right: solid var(--white_Sum_Of_Course);
-  transition: .7s;
+  color: var(--black_Sum_Of_Course);
+  background: var(--white_Background);
+  border-right: solid var(--black);
+  transition: 0.7s;
   width: 0px;
   height: 100%;
-  color: var(--white);
   text-align: center;
 
   position: fixed;
@@ -98,18 +99,18 @@ body {
 #sectionContain,
 #footerMenu {
   width: clamp(250px, 100vw, 1650px);
-  background: var(--black);
-  box-shadow: -0px -0px 10px 0px var(--white_Sum_Of_Course);
+  background: var(--white_Background);
+  box-shadow: -0px -0px 10px 0px var(--black);
   border: none;
+  transition: 0.2s;
+  margin: 0 auto;
 }
 #headerSearch {
   border-radius: 0 0 2.5rem 2.5rem;
-  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100px;
-  transition: .3s;
 
   position: fixed;
   top: 0;
@@ -123,7 +124,6 @@ body {
   display: flex;
   justify-content: space-between;
   margin: 110px auto;
-  position: relative;
 }
 #divContainScrollInfinit {
   display: flex;
@@ -132,41 +132,68 @@ body {
   flex-wrap: wrap;
   overflow: scroll;
   border-radius: 2.5rem;
-  
+  padding: 1.3rem 0;
 }
-/*
 #footerMenu {
   border-radius: 2.5rem 2.5rem 0 0;
   height: 100px;
-  display: none;
-}*/
-
-
-@keyframes gradientAnimation {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-
-.styleSecSumAboutPokemon {
-  --firstColorShadow: #000;
-  --secondColorShadow: #000; 
 }
+
+/*<<<Tema escuro de cada componente.>>>*/
+
+body.dark_Theme {
+  background: var(--black_Sum_Of_Course);
+}
+body.dark_Theme #asideInformationWebsite {
+  color: var(--white);
+  background: var(--black_Background);
+}
+body.dark_Theme #headerSearch,
+body.dark_Theme #sectionContain,
+body.dark_Theme #footerMenu,
+body.dark_Theme #secGlobalElements {
+  background: var(--black_Background);
+  box-shadow: -0px -0px 10px 0px var(--white_Sum_Of_Course);
+}
+body.dark_Theme .ipnSearchPokemon {
+  background: var(--black_Sum_Of_Course)
+    url(../../image/iconMenu/icon_Magnifying_Theme_Of_Course.png) no-repeat left;
+  color: var(--white);
+}
+body.dark_Theme .ipnSearchPokemon::placeholder {
+  color: var(--white);
+}
+
+body.dark_Theme .bodyMenuScroll button {
+  background: var(--white);
+  border: solid 2px var(--black_Background);
+  box-shadow: 0px 0px 10px 0px var(--white);
+}
+
+body.dark_Theme .bodyCard {
+  background: var(--black_Sum_Of_Course);
+}
+body.dark_Theme .bodyCard figure,
+body.dark_Theme .bodyCard .infoTypeIconPokemon {
+  background: var(--black_Sum_Of_Course);
+  border: transparent 0px;
+  color: var(--white);
+}
+
+body.dark_Theme .styleSecSumAboutPokemon {
+  background: var(--black_Sum_Of_Course);
+  color: var(--white);
+}
+
 
 @keyframes boxsShadowAnimation {
   0%,
   100% {
-    box-shadow: 0 0 20px var(--firstColorShadow); 
-    border: solid var(--firstColorShadow) ;
+    box-shadow: 0 0 20px var(--firstColorShadow);
+    border: solid var(--firstColorShadow);
   }
   50% {
-    box-shadow: 0 0 20px var(--secondColorShadow); 
+    box-shadow: 0 0 20px var(--secondColorShadow);
     border: solid var(--secondColorShadow);
   }
 }

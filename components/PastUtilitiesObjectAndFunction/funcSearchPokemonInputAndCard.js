@@ -37,7 +37,7 @@ export const openPokemonDetailPage = (pokemonData) => {
   const basePath = "/PastPageInformationDetailed/pageInformationDetailed.html";
 
   window.open(
-    `${basePath}?${query}`, "_blank"
+    `${basePath}?${query}`, "_parent"
   );
 };
 
