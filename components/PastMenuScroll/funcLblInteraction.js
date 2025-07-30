@@ -1,4 +1,4 @@
-const basePath = "../../image/iconMenu/"
+const basePath = new URL("../../image/iconMenu/", import.meta.url).pathname;
 
 export const funcThemeChange = () => {
   const btnThemeChange = document.createElement("button");

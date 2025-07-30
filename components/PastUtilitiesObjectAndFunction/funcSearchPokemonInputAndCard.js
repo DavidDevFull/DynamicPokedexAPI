@@ -34,7 +34,7 @@ export const openPokemonDetailPage = (pokemonData) => {
     weight: pokemonData.weight,
   }).toString();
 
-  const basePath = "../PastPageInformationDetailed/pageInformationDetailed.html";
+  const basePath = new URL("../PastPageInformationDetailed/pageInformationDetailed.html", import.meta.url).pathname;
 
   window.open(
     `${basePath}?${query}`, "_parent"
